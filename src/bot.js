@@ -25,7 +25,7 @@ client.on('typingStart', async (typing) => {
     
     try {
         // Fetch recent messages from the channel (last 50 messages to ensure we catch relevant ones)
-        const recentMessages = await typing.channel.messages.fetch({ limit: 50 });
+        const recentMessages = await typing.channel.messages.fetch({ limit: 10 });
         
         // Check if any recent message within the last 2 minutes contains the keywords
         const twoMinutesAgo = Date.now() - 2 * 60 * 1000; // 2 minutes in milliseconds
